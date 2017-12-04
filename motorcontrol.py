@@ -165,6 +165,13 @@ def auxBbackward():
 def auxstop():
 	auxB_stop()
 	auxA_stop()
+
+def setServo45():
+    GPIO.pulseMicro(13, 1000, 15000)
+
+def setServo0():
+    GPIO.pulseMicro(13, 2000, 15000)
+
 # -------------------------------------------------- #
 # Initialization part                                #
 # -------------------------------------------------- #
@@ -219,6 +226,11 @@ def AuxBbackward():
 def Auxstop():
 	auxstop()
 	
+@webiopi.macro
+def set_servo_0():
+    setServo0()
 
-
+@webiopi.macro
+def set_servo_45():
+    setServo45()
 

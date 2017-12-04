@@ -36,8 +36,11 @@
 		button = webiopi().createButton("auxb_down", "\\2/", AuxBbackward, Auxstop);
 		$("#auxbck").append(button);
 		
-		button = webiopi().createRatioSlider(13);
-		$("#slider").append(button);
+		button = webiopi().createButton("servo_0", "Servo 0 Degrees", set_servo_0);
+        $("#servo").append(button);
+
+        button = webiopi().createButton("servo_45", "Servo 45 Degrees", set_servo_45);
+        $("#servo").append(button);
 	}
 	
 	function go_forward() {
@@ -79,6 +82,14 @@
 	function Auxstop() {
 		webiopi().callMacro("Auxstop");
 	}
+
+    function set_servo_0() {
+        webiopi().callMacro("set_servo_45");
+    }
+
+    function set_servo_45() {
+        webiopi().callMacro("set_servo_45");
+    }
 	
 	webiopi().ready(init);
 		
@@ -108,7 +119,7 @@
 		<div id="down"></div>
 		<div id="auxfwd"></div>
 		<div id="auxbck"></div>
-		<div id="slider"></div>
+		<div id="servo"></div>
 	</div>
 </body>
 </html>
