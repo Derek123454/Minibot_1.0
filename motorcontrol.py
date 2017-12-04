@@ -167,10 +167,10 @@ def auxstop():
 	auxA_stop()
 
 def setServo45():
-    GPIO.pulseMicro(13, 1000, 15000)
+    GPIO.pulseMicroRatio(PWM1, 20000, 0.05) # 1ms HIGH
 
 def setServo0():
-    GPIO.pulseMicro(13, 2000, 15000)
+    GPIO.pulseMicroRatio(PWM1, 20000, 0.10) # 2ms HIGH
 
 # -------------------------------------------------- #
 # Initialization part                                #
