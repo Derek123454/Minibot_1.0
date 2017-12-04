@@ -50,7 +50,12 @@ def setup():
 	GPIO.setFunction(B1, GPIO.OUT)
 	GPIO.setFunction(B2, GPIO.OUT)
 	
-	GPIO.setFunction(PWM1, GPIO.PWM)
+	GPIO.setFunction(PWM1, GPIO.OUT)
+    # I set it to OUT and not PWM because we don't
+    #   want the PWM loop running in the background -
+    #   that causes the servo to be twitchy. This writes
+    #   the PWM signal once and finishes. This probably
+    #   blocks the main thread though.
 	
 
 	set_speed(0.9)
